@@ -25,7 +25,7 @@ arrWord.forEach((letter) => {
 }
 );
 letters.innerHTML = guionesArr.join(' ');
-
+image.innerHTML = `<img class="mx-auto h-auto w-96 opacity-0" src="../assets/images/ahorc8v.png"></img>`;
 
 
 // Dibujo el alfabeto en el tablero
@@ -53,38 +53,36 @@ alphabet.forEach((letter) => {
             }
                 , 1500);
         }
+        const elementoImg = `<img class="mx-auto h-auto w-96" src="../assets/images/ahorc${vidas}v.png"></img>`;
         switch (vidas) {
-            case 8:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc7v.png"></img>';
-                break;
             case 7:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc7v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 6:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc6v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 5:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc5v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 4:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc4v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 3:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc3v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 2:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc2v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 1:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc1v.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
             case 0:
-                image.innerHTML = '<img class="mx-auto h-80 w-80" src="../assets/images/ahorc0vxx.png"></img>';
+                image.innerHTML = elementoImg;
                 break;
         }
         // Si se quedó sin vidas pierde
         if (vidas === 0) {
-            alph.innerHTML = 'Perdiste, la palabra era: ' + wordSelected;
+            alph.innerHTML = 'Perdiste, la palabra era: ' + wordSelected.toUpperCase();
             alph.classList.add('text-red-600');
         }
         if (guionesArr.join('') === arrWord.join('')) {
