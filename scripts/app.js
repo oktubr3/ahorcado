@@ -53,7 +53,7 @@ alphabet.forEach((letter) => {
             }
                 , 1500);
         }
-        const elementoImg = `<img class="mx-auto h-auto w-96" src="../assets/images/ahorc${vidas}v.png"></img>`;
+        const elementoImg = `<img class="mx-auto h-auto w-96 fade-in" src="../assets/images/ahorc${vidas}v.png"></img>`;
         switch (vidas) {
             case 7:
                 image.innerHTML = elementoImg;
