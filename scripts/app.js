@@ -82,7 +82,7 @@ alphabet.forEach((letter) => {
         }
         // Si se quedó sin vidas pierde
         if (vidas === 0) {
-            alph.innerHTML = 'Perdiste, la palabra era: ' + wordSelected.toUpperCase();
+            alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
             alph.classList.add('text-red-600');
         }
         if (guionesArr.join('') === arrWord.join('')) {
