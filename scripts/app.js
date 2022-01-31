@@ -25,14 +25,14 @@ arrWord.forEach((letter) => {
 }
 );
 letters.innerHTML = guionesArr.join(' ');
-image.innerHTML = `<img class="mx-auto h-auto w-80 opacity-0" src="./assets/images/ahorc8v.png"></img>`;
+image.innerHTML = `<img class="mx-auto md:w-80 md:h-80 w-64 h-64 opacity-0" src="./assets/images/ahorc8v.png"></img>`;
 
 
 // Dibujo el alfabeto en el tablero
 alphabet.forEach((letter) => {
     const span = document.createElement('span');   // Creamos un elemento span
     span.innerHTML = letter.toUpperCase() + ' ';   // Agregamos la letra mas un espacio
-    alph.appendChild(span).classList.add('hover:text-blue-800', 'cursor-pointer', 'p-5', 'text-center', 'text-4xl', 'font-bold', 'text-gray-800'); // Agregamos el elemento al padre
+    alph.appendChild(span).classList.add('hover:text-gray-600', 'cursor-pointer', 'md:p-5','p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-gray-800'); // Agregamos el elemento al padre
     alph.appendChild(span).id = letter;
     // Agregamos el evento click a cada letra del alfabeto
     span.addEventListener('click', (e) => {
@@ -60,7 +60,7 @@ alphabet.forEach((letter) => {
                 , 1500);
         }
         
-        const elementoImg = `<img class="mx-auto h-auto w-80" src="./assets/images/ahorc${vidas}v.png"></img>`;
+        const elementoImg = `<img class="mx-auto md:w-80 md:h-80 w-64 h-64" src="./assets/images/ahorc${vidas}v.png"></img>`;
         switch (vidas) {
             case 7:
                 image.innerHTML = elementoImg;

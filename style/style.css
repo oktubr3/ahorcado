@@ -5,3 +5,7 @@ image {
    -o-transition: opacity .20s ease-in-out;
    transition: opacity .20s ease-in-out;
 }
+
+.amatic-font {
+   font-family: 'Amatic SC', cursive
+}

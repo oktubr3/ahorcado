@@ -7,28 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <title> Juego del Ahorcado </title>
 </head>
 
 <body>
 
-    <div class="flex flex-row bg-zinc-200 items-center">
-        <div class="flex-1 w-64 justify-center w-2/5">
-            <h1 class="m-10 font-semibold text-4xl text-center">Juego del Ahorcado</h1>
+    <div class="flex md:flex-row flex-col w-4/5 bg-zinc-100 items-center mx-auto my-10 rounded-xl p-2">
+        <div class="flex-1 justify-center">
+            <h1 class="md:m-10 m-5 text-gray-800 font-bold md:text-6xl text-4xl text-center amatic-font">Juego del Ahorcado</h1>
 
-            <div class="w-80 relative mx-auto">
-                <div class="w-80 h-80 p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
+            <div class="md:w-80 w-64 relative mx-auto">
+                <div class="md:w-80 md:h-80 w-64 h-64 p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
                     <!-- img -->
                 </div>
-                <div class="absolute top-2 right-2">
-                    <h2 class="text-4xl"> <span id="nro-vidas"> </span></h2>
+                <div class="absolute top-2 right-2 flex flex-row items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-filled icon-tabler icon-tabler-heart" width="34" height="34"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="#EF4444" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M19.5 13.572l-7.5 7.428-7.5-7.428m0 0a5 5 0 1 1 7.5-6.566 5 5 0 1 1 7.5 6.572" />
+                    </svg>
+                    <h2 class="md:text-4xl text-3xl"> <span id="nro-vidas"> </span></h2>
                 </div>
             </div>
-            <h2 class="mt-5 mb-10 text-6xl text-center" id="letters"> </h2>
+            <h2 class="mt-5 mb-10 md:text-7xl text-5xl text-center amatic-font text-gray-800" id="letters"> </h2>
         </div>
-        <div class="flex-1 w-3/5">
-            <h2 class="text-5xl text-center p-10" id="alphabet">
+        <div class="flex-1 md:w-3/5 w-80 border-dashed border-2 rounded-xl mx-5 mb-2">
+            <h2 class="md:text-7xl text-4xl text-center md:p-10 p-1 amatic-font font-bold" id="alphabet">
                 <!-- span alphabet -->
             </h2>
         </div>
