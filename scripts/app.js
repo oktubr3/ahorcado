@@ -25,7 +25,7 @@ arrWord.forEach((letter) => {
 }
 );
 letters.innerHTML = guionesArr.join(' ');
-image.innerHTML = `<img class="mx-auto h-auto w-80 opacity-0" src="../assets/images/ahorc8v.png"></img>`;
+image.innerHTML = `<img class="mx-auto h-auto w-80 opacity-0" src="./assets/images/ahorc8v.png"></img>`;
 
 
 // Dibujo el alfabeto en el tablero
@@ -53,7 +53,7 @@ alphabet.forEach((letter) => {
             }
                 , 1500);
         }
-        const elementoImg = `<img class="mx-auto h-auto w-80 fade-in" src="../assets/images/ahorc${vidas}v.png"></img>`;
+        const elementoImg = `<img class="mx-auto h-auto w-80" src="./assets/images/ahorc${vidas}v.png"></img>`;
         switch (vidas) {
             case 7:
                 image.innerHTML = elementoImg;
