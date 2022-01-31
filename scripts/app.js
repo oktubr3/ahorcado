@@ -52,7 +52,14 @@ alphabet.forEach((letter) => {
                 alph.removeChild(span).id;
             }
                 , 1500);
+        } else {
+            span.classList.add('text-green-600');
+            setTimeout(() => {
+                alph.removeChild(span).id;
+            }
+                , 1500);
         }
+        
         const elementoImg = `<img class="mx-auto h-auto w-80" src="./assets/images/ahorc${vidas}v.png"></img>`;
         switch (vidas) {
             case 7:
@@ -85,6 +92,7 @@ alphabet.forEach((letter) => {
             alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
             alph.classList.add('text-red-600');
         }
+        // Si se ganó
         if (guionesArr.join('') === arrWord.join('')) {
             alph.innerHTML = '';
             alph.innerHTML = 'Ganaste!!!';
