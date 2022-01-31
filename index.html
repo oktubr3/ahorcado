@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +10,40 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title> Juego del Ahorcado </title>
 </head>
-<body>
-<div class="m-5 mx-auto border-2">
-    <h1 class="m-10 font-semibold text-4xl text-center" >Juego del Ahorcado</h1>
 
-    <div class="w-80 relative mx-auto">
-        <div class="w-80 h-80 p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
-            <!-- img -->
+<body>
+
+    <div class="flex flex-row content-center">
+        <div class="flex-1 w-64 justify-center">
+            <h1 class="m-10 font-semibold text-4xl text-center">Juego del Ahorcado</h1>
+
+            <div class="w-80 relative mx-auto">
+                <div class="w-80 h-80 p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
+                    <!-- img -->
+                </div>
+                <div class="absolute top-2 right-2">
+                    <h2 class="text-4xl"> <span id="nro-vidas"> </span></h2>
+                </div>
+            </div>
+            <h2 class="mt-5 mb-10 text-7xl text-center" id="letters"> </h2>
         </div>
-        <div class="absolute top-2 right-2">
-            <h2 class="text-4xl"> <span id="nro-vidas"> </span></h2>
+        <div class="flex-1 w-96">
+            <h2 class="text-5xl text-center mt-10 p-10" id="alphabet">
+                <!-- span alphabet -->
+            </h2>
         </div>
+
+
     </div>
 
-    
-    <h2 class="mt-5 mb-10 text-7xl text-center" id="letters">  </h2>
-    <h2 class="text-5xl text-center" id="alphabet"></h2>
-    
-</div>
+
+
+
+
+
+
 
     <script src="./scripts/app.js"></script>
 </body>
+
 </html>

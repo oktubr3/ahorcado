@@ -32,7 +32,7 @@ image.innerHTML = `<img class="mx-auto h-auto w-80 opacity-0" src="./assets/imag
 alphabet.forEach((letter) => {
     const span = document.createElement('span');   // Creamos un elemento span
     span.innerHTML = letter.toUpperCase() + ' ';   // Agregamos la letra mas un espacio
-    alph.appendChild(span).classList.add('hover:text-blue-800', 'cursor-pointer');
+    alph.appendChild(span).classList.add('hover:text-blue-800', 'cursor-pointer', 'p-5', 'text-center', 'text-4xl', 'font-bold', 'text-gray-800'); // Agregamos el elemento al padre
     alph.appendChild(span).id = letter;
     // Agregamos el evento click a cada letra del alfabeto
     span.addEventListener('click', (e) => {
