@@ -10,17 +10,22 @@
     <title> Juego del Ahorcado </title>
 </head>
 <body>
-<div class="container m-10 mx-auto border-2">
+<div class="m-5 mx-auto border-2">
     <h1 class="m-10 font-semibold text-4xl text-center" >Juego del Ahorcado</h1>
-    <div class="flex" id="image">
-        <img class="mx-auto h-auto w-96 opacity-0" src="../assets/images/ahorc8v.png"></img>
+
+    <div class="w-80 relative mx-auto">
+        <div class="p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
+        </div>
+        <div class="absolute top-2 right-2">
+            <h2 class="text-4xl"> <span id="nro-vidas"> </span></h2>
+        </div>
     </div>
+
+    
     <h2 class="mt-5 mb-10 text-7xl text-center" id="letters">  </h2>
     <h2 class="text-5xl text-center" id="alphabet"></h2>
-    <h2 class="m-20 text-4xl text-center" > Vidas: <span id="nro-vidas"> </span> </h2>
+    
 </div>
-
-                                                                                                            
 
     <script src="./scripts/app.js"></script>
 </body>
