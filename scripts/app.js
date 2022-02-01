@@ -51,13 +51,13 @@ alphabet.forEach((letter) => {
             setTimeout(() => {
                 alph.removeChild(span).id;
             }
-                , 500);
+                , 1000);
         } else {
             span.classList.add('text-green-600');
             setTimeout(() => {
                 alph.removeChild(span).id;
             }
-                , 500);
+                , 1000);
         }
         
         const elementoImg = `<img class="mx-auto md:w-auto md:h-auto w-64 h-64" src="./assets/images/ahorc${vidas}v.png"></img>`;
