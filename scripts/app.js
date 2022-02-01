@@ -25,7 +25,7 @@ arrWord.forEach((letter) => {
 }
 );
 letters.innerHTML = guionesArr.join(' ');
-image.innerHTML = `<img class="mx-auto md:w-80 md:h-80 w-64 h-64 opacity-0" src="./assets/images/ahorc8v.png"></img>`;
+image.innerHTML = `<img class="mx-auto md:w-auto md:h-auto w-64 h-64 opacity-0" src="./assets/images/ahorc8v.png"></img>`;
 
 
 // Dibujo el alfabeto en el tablero
@@ -51,16 +51,16 @@ alphabet.forEach((letter) => {
             setTimeout(() => {
                 alph.removeChild(span).id;
             }
-                , 1500);
+                , 500);
         } else {
             span.classList.add('text-green-600');
             setTimeout(() => {
                 alph.removeChild(span).id;
             }
-                , 1500);
+                , 500);
         }
         
-        const elementoImg = `<img class="mx-auto md:w-80 md:h-80 w-64 h-64" src="./assets/images/ahorc${vidas}v.png"></img>`;
+        const elementoImg = `<img class="mx-auto md:w-auto md:h-auto w-64 h-64" src="./assets/images/ahorc${vidas}v.png"></img>`;
         switch (vidas) {
             case 7:
                 image.innerHTML = elementoImg;
