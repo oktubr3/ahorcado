@@ -32,7 +32,7 @@ image.innerHTML = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64 opacity-0" src=
 alphabet.forEach((letter) => {
     const span = document.createElement('span');   // Creamos un elemento span
     span.innerHTML = letter.toUpperCase() + ' ';   // Agregamos la letra mas un espacio
-    alph.appendChild(span).classList.add('hover:text-gray-600', 'cursor-pointer', 'md:p-5','p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-gray-800'); // Agregamos el elemento al padre
+    alph.appendChild(span).classList.add('hover:text-gray-600', 'cursor-pointer', 'md:p-5', 'p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-white', 'text-opacity-60'); // Agregamos el elemento al padre
     alph.appendChild(span).id = letter;
     // Agregamos el evento click a cada letra del alfabeto
     span.addEventListener('click', (e) => {
@@ -90,13 +90,13 @@ alphabet.forEach((letter) => {
         // Si se quedó sin vidas pierde
         if (vidas === 0) {
             alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
-            alph.classList.add('text-red-600');
+            alph.classList.add('text-red-600', 'text-opacity-60');
         }
         // Si se ganó
         if (guionesArr.join('') === arrWord.join('')) {
             alph.innerHTML = '';
             alph.innerHTML = 'Ganaste!!!';
-            alph.classList.add('text-green-600');
+            alph.classList.add('text-green-600', 'text-opacity-60');
         }
         
     });
