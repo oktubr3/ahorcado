@@ -16,26 +16,28 @@
 
 <body>
 
-    <div class="flex md:flex-row flex-col bg-zinc-100  min-w-screen min-h-screen items-center mx-auto rounded-xl py-2">
+    <div class="flex md:flex-row flex-col bg-zinc-100 min-h-screen items-center mx-auto rounded-xl">
         <div class="flex-1 justify-center">
-            <h1 class="m-5 mb-10 text-gray-800 font-bold md:text-7xl text-5xl text-center amatic-font">Juego del Ahorcado</h1>
+            <h1 class="m-5 mb-10 text-gray-800 font-bold md:text-7xl text-5xl text-center amatic-font">Juego del
+                Ahorcado</h1>
 
-            <div class="md:w-10/12 w-64 relative mx-auto">
-                <div class="md:w-auto md:h-auto w-64 h-64 p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
+            <div class="relative mx-auto md:w-96 md:h-96">
+                <div class="md:h-96 md:w-96 p-6 bg-white rounded-xl shadow-lg flex items-center space-x-4" id="image">
                     <!-- img -->
                 </div>
                 <div class="absolute top-2 right-2 flex flex-row items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-filled icon-tabler icon-tabler-heart" width="34" height="34"
-                        viewBox="0 0 24 24" stroke-width="2" stroke="#EF4444" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-filled icon-tabler icon-tabler-heart"
+                        width="34" height="34" viewBox="0 0 24 24" stroke-width="2" stroke="#EF4444" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M19.5 13.572l-7.5 7.428-7.5-7.428m0 0a5 5 0 1 1 7.5-6.566 5 5 0 1 1 7.5 6.572" />
                     </svg>
                     <h2 class="md:text-4xl text-3xl"> <span id="nro-vidas"> </span></h2>
                 </div>
             </div>
-            <h2 class="md:text-7xl text-4xl text-center md:p-5 p-1 amatic-font font-bold w-auto m-5" id="letters"> </h2>
+            <h2 class="md:text-7xl text-4xl text-center md:p-5 p-1 amatic-font font-bold m-5" id="letters"> </h2>
         </div>
-        <div class="flex-1 md:w-3/5 w-80 border-dashed border-2 rounded-xl mx-5 mb-2">
+        <div class="flex-1 md:w-3/5 w-80 border-dashed border-2 rounded-xl mx-20 mb-2">
             <h2 class="md:text-7xl text-4xl text-center md:p-10 p-1 amatic-font font-bold" id="alphabet">
                 <!-- span alphabet -->
             </h2>
