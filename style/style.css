@@ -1,9 +1,9 @@
 image {
-   -webkit-transition: opacity .20s ease-in-out;
-   -moz-transition: opacity .20s ease-in-out;
-   -ms-transition: opacity .20s ease-in-out;
-   -o-transition: opacity .20s ease-in-out;
-   transition: opacity .20s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -ms-transition: opacity .5s ease-in-out;
+   -o-transition: opacity .5s ease-in-out;
+   transition: opacity .5s ease-in-out;
 }
 
 .amatic-font {
