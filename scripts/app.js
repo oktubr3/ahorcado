@@ -35,31 +35,42 @@ alphabet.forEach((letter) => {
     alph.appendChild(span).classList.add('cursor-pointer', 'md:p-5', 'p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-white', 'text-opacity-80'); // Agregamos el elemento al padre
     alph.appendChild(span).id = letter;
     // Agregamos el evento click a cada letra del alfabeto
-    span.addEventListener('click', (e) => {
+    span.addEventListener('click', (e) => logicaFunc(e));
+
+    const logicaFunc = (e) => {
         let letterClicked = e.target.id;
         let letterIndex = arrWord.indexOf(letterClicked);
+
         for (let i = 0; i < arrWord.length; i++) {
             if (arrWord[i] === letterClicked) {
                 guionesArr[i] = letterClicked;
                 letters.innerHTML = guionesArr.join(' ').toUpperCase();
             }
         }
+
+        // Si la letra no esta en la palabra
         if (letterIndex === -1) {
             vidas--;
             lives.innerHTML = vidas;
             span.classList.add('text-red-600');
             setTimeout(() => {
                 alph.removeChild(span).id;
+                span.classList.add('line-through');
+                // insertar letra en el tablero al final
+                alph.appendChild(span).innerHTML = `${letterClicked.toUpperCase()} `;
+
             }
                 , 1000);
         } else {
             span.classList.add('text-green-600');
             setTimeout(() => {
-                alph.removeChild(span).id;
+                // alph.removeChild(span).id;
+                span.classList.add('line-through');
             }
                 , 1000);
         }
 
+        // Switch para cambiar imagen de vida
         const elementoImg = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/images/ahorc${vidas}v.webp" alt=""></img>`;
         switch (vidas) {
             case 7:
@@ -114,8 +125,9 @@ alphabet.forEach((letter) => {
             playAgainButton();
         }
 
-    });
+    }
 });
+
 
 
 
