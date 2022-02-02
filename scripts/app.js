@@ -2,6 +2,7 @@ const letters = document.querySelector("#letters"); // letras en el tablero
 const alph = document.getElementById('alphabet'); // letras del alfabeto
 let lives = document.getElementById('nro-vidas'); // vidas
 const image = document.getElementById('image'); // imagen
+let playAgain = document.getElementById('play-again'); // boton de jugar de nuevo
 
 
 const words = ['manzana', 'banana', 'pera', 'perro', 'gato', 'rinoceronte', 'bicicleta', 'escopeta', 'canario'];
@@ -32,7 +33,7 @@ image.innerHTML = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/
 alphabet.forEach((letter) => {
     const span = document.createElement('span');   // Creamos un elemento span
     span.innerHTML = letter.toUpperCase() + ' ';   // Agregamos la letra mas un espacio
-    alph.appendChild(span).classList.add('hover:text-gray-600', 'cursor-pointer', 'md:p-5', 'p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-white', 'text-opacity-60'); // Agregamos el elemento al padre
+    alph.appendChild(span).classList.add('cursor-pointer', 'md:p-5', 'p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-white', 'text-opacity-80'); // Agregamos el elemento al padre
     alph.appendChild(span).id = letter;
     // Agregamos el evento click a cada letra del alfabeto
     span.addEventListener('click', (e) => {
@@ -59,8 +60,8 @@ alphabet.forEach((letter) => {
             }
                 , 1000);
         }
-        
-        const elementoImg = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/images/ahorc${vidas}v.webp" alt="Image Vida ${vidas}"></img>`;
+
+        const elementoImg = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/images/ahorc${vidas}v.webp" alt=""></img>`;
         switch (vidas) {
             case 7:
                 image.innerHTML = elementoImg;
@@ -90,15 +91,20 @@ alphabet.forEach((letter) => {
         // Si se quedó sin vidas pierde
         if (vidas === 0) {
             alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
-            alph.classList.add('text-red-600', 'text-opacity-60');
+            alph.classList.add('text-red-600', 'text-opacity-80');
+            const button = document.createElement('button');   // Creamos un elemento button
+            playAgain.innerHTML = `<button
+                        class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
+                        JUGAR DE NUEVO
+                        </button>`; 
         }
         // Si se ganó
         if (guionesArr.join('') === arrWord.join('')) {
             alph.innerHTML = '';
             alph.innerHTML = 'Ganaste!!!';
-            alph.classList.add('text-green-600', 'text-opacity-60');
+            alph.classList.add('text-green-600', 'text-opacity-80');
         }
-        
+
     });
 });
 
