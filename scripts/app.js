@@ -138,9 +138,6 @@ alphabet.forEach((letter) => {
 
 });
 
-// Libreria de Audio
-// https://github.com/goldfire/howler.js#methods
-
 
 
 
