@@ -115,6 +115,9 @@ alphabet.forEach((letter) => {
             alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
             alph.classList.add('text-red-600', 'text-opacity-80');   // Creamos un elemento button
             playAgainButton();
+            // reproducir audio
+            const audio = new Audio('./assets/audios/gameover.mp3');
+            audio.play();
         }
         // Si se ganó
         if (guionesArr.join('') === arrWord.join('')) {
@@ -122,6 +125,9 @@ alphabet.forEach((letter) => {
             alph.innerHTML = 'Ganaste!!!';
             alph.classList.add('text-green-600', 'text-opacity-80');
             playAgainButton();
+            // reproducir audio
+            const audio = new Audio('./assets/audios/youwin.mp3');
+            audio.play();
         }
         
         // Historial de letras
@@ -132,7 +138,8 @@ alphabet.forEach((letter) => {
 
 });
 
-
+// Libreria de Audio
+// https://github.com/goldfire/howler.js#methods
 
 
 
