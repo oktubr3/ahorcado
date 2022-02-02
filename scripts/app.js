@@ -3,6 +3,7 @@ const alph = document.getElementById('alphabet'); // letras del alfabeto
 const lives = document.getElementById('nro-vidas'); // vidas
 const image = document.getElementById('image'); // imagen
 const playAgain = document.getElementById('play-again'); // boton de jugar de nuevo
+const history = document.getElementById('history'); // historial de letras
 
 // variables globales
 const words = ['manzana', 'banana', 'pera', 'perro', 'gato', 'rinoceronte', 'bicicleta', 'escopeta', 'canario'];
@@ -10,6 +11,7 @@ console.log(Math.floor(Math.random() * words.length));
 const alphabet = 'abcdefghijklmnñopqrstuvwxyz'.split('');
 let vidas = 8;
 lives.innerHTML = vidas;
+let historyArr = [];
 
 const wordSelected = words[Math.floor(Math.random() * words.length)]; // Seleccionamos una palabra al azar multiplicando el numero aleatorio por la longitud del array
 console.log(wordSelected);
@@ -27,16 +29,17 @@ arrWord.forEach((letter) => {
 letters.innerHTML = guionesArr.join(' ');
 image.innerHTML = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/images/ahorc8v.webp" alt="Imagen Vida 8"></img>`;
 
-
 // Dibujo el alfabeto en el tablero
 alphabet.forEach((letter) => {
     const span = document.createElement('span');   // Creamos un elemento span
     span.innerHTML = letter.toUpperCase() + ' ';   // Agregamos la letra mas un espacio
     alph.appendChild(span).classList.add('cursor-pointer', 'md:p-5', 'p-2', 'text-center', 'md:text-6xl', 'text-3xl', 'font-bold', 'text-white', 'text-opacity-80'); // Agregamos el elemento al padre
     alph.appendChild(span).id = letter;
+
     // Agregamos el evento click a cada letra del alfabeto
     span.addEventListener('click', (e) => logicaFunc(e));
 
+    // Funcion para el evento click
     const logicaFunc = (e) => {
         let letterClicked = e.target.id;
         let letterIndex = arrWord.indexOf(letterClicked);
@@ -55,16 +58,12 @@ alphabet.forEach((letter) => {
             span.classList.add('text-red-600');
             setTimeout(() => {
                 alph.removeChild(span).id;
-                span.classList.add('line-through');
-                // insertar letra en el tablero al final
-                // alph.appendChild(span).innerHTML = `${letterClicked.toUpperCase()} `;
             }
                 , 1000);
         } else {
             span.classList.add('text-green-600');
             setTimeout(() => {
-                // alph.removeChild(span).id;
-                span.classList.add('line-through');
+            alph.removeChild(span).id;
             }
                 , 1000);
         }
@@ -98,6 +97,7 @@ alphabet.forEach((letter) => {
                 break;
         }
 
+
         // Creo el Boton de jugar de nuevo y le agrego el evento click
         const playAgainButton = () => {
             playAgain.innerHTML = `<button
@@ -123,9 +123,16 @@ alphabet.forEach((letter) => {
             alph.classList.add('text-green-600', 'text-opacity-80');
             playAgainButton();
         }
-
+        
+        // Historial de letras
+        historyArr.unshift(letterClicked);
+        console.log(historyArr);
+        history.innerHTML = `<span class="text-4xl text-opacity-80">${historyArr.join(' - ').toUpperCase()}</span>`;
     }
+
 });
+
+
 
 
 
