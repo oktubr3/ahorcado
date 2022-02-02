@@ -57,8 +57,7 @@ alphabet.forEach((letter) => {
                 alph.removeChild(span).id;
                 span.classList.add('line-through');
                 // insertar letra en el tablero al final
-                alph.appendChild(span).innerHTML = `${letterClicked.toUpperCase()} `;
-
+                // alph.appendChild(span).innerHTML = `${letterClicked.toUpperCase()} `;
             }
                 , 1000);
         } else {
