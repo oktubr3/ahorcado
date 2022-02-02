@@ -70,7 +70,7 @@ alphabet.forEach((letter) => {
                 , 1000);
         }
 
-        // Switch para cambiar imagen de vida
+        // Switch para cambiar imagen según vida
         const elementoImg = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/images/ahorc${vidas}v.webp" alt=""></img>`;
         switch (vidas) {
             case 7:
