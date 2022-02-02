@@ -87,24 +87,31 @@ alphabet.forEach((letter) => {
                 image.innerHTML = elementoImg;
                 break;
         }
-        // Si se quedó sin vidas pierde
-        if (vidas === 0) {
-            alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
-            alph.classList.add('text-red-600', 'text-opacity-80');   // Creamos un elemento button
+
+        // Creo el Boton de jugar de nuevo y le agrego el evento click
+        const playAgainButton = () => {
             playAgain.innerHTML = `<button
                         class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
                         JUGAR DE NUEVO
-                        </button>`; 
+                        </button>`;
             playAgain.addEventListener('click', () => {
                 location.reload();
             }
             );
+        }
+
+        // Si se quedó sin vidas pierde
+        if (vidas === 0) {
+            alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
+            alph.classList.add('text-red-600', 'text-opacity-80');   // Creamos un elemento button
+            playAgainButton();
         }
         // Si se ganó
         if (guionesArr.join('') === arrWord.join('')) {
             alph.innerHTML = '';
             alph.innerHTML = 'Ganaste!!!';
             alph.classList.add('text-green-600', 'text-opacity-80');
+            playAgainButton();
         }
 
     });
