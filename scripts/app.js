@@ -1,10 +1,10 @@
 const letters = document.querySelector("#letters"); // letras en el tablero
 const alph = document.getElementById('alphabet'); // letras del alfabeto
-let lives = document.getElementById('nro-vidas'); // vidas
+const lives = document.getElementById('nro-vidas'); // vidas
 const image = document.getElementById('image'); // imagen
-let playAgain = document.getElementById('play-again'); // boton de jugar de nuevo
+const playAgain = document.getElementById('play-again'); // boton de jugar de nuevo
 
-
+// variables globales
 const words = ['manzana', 'banana', 'pera', 'perro', 'gato', 'rinoceronte', 'bicicleta', 'escopeta', 'canario'];
 console.log(Math.floor(Math.random() * words.length));
 const alphabet = 'abcdefghijklmnñopqrstuvwxyz'.split('');
@@ -20,7 +20,6 @@ console.log(arrWord);
 
 // Dibujo un array de guiones bajos
 let guionesArr = [];
-
 arrWord.forEach((letter) => {
     guionesArr.push('_');
 }
@@ -91,12 +90,15 @@ alphabet.forEach((letter) => {
         // Si se quedó sin vidas pierde
         if (vidas === 0) {
             alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
-            alph.classList.add('text-red-600', 'text-opacity-80');
-            const button = document.createElement('button');   // Creamos un elemento button
+            alph.classList.add('text-red-600', 'text-opacity-80');   // Creamos un elemento button
             playAgain.innerHTML = `<button
                         class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
                         JUGAR DE NUEVO
                         </button>`; 
+            playAgain.addEventListener('click', () => {
+                location.reload();
+            }
+            );
         }
         // Si se ganó
         if (guionesArr.join('') === arrWord.join('')) {
