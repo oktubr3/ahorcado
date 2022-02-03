@@ -148,7 +148,6 @@ alphabet.forEach((letter) => {
 
         // Historial de letras
         historyArr.unshift(letterClicked);
-        console.log(historyArr);
         history.innerHTML = `<span class="text-4xl text-opacity-80">${historyArr.join(' - ').toUpperCase()}</span>`;
     }
 
