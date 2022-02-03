@@ -132,6 +132,7 @@ alphabet.forEach((letter) => {
         if (vidas === 0) {
             alph.innerHTML = 'Perdiste!!! La palabra era: ' + wordSelected.toUpperCase();
             alph.classList.add('text-red-600', 'text-opacity-80');   // Creamos un elemento button
+            history.innerHTML = '';
             playAgainButton();
             // reproducir audio
             audioLose.play().catch(e => console.log(e));
@@ -141,6 +142,7 @@ alphabet.forEach((letter) => {
             alph.innerHTML = '';
             alph.innerHTML = 'Ganaste!!!';
             alph.classList.add('text-green-600', 'text-opacity-80');
+            history.innerHTML = '';
             playAgainButton();
             // reproducir audio
             audioWin.play().catch((e) => console.log(e));
