@@ -5,7 +5,6 @@ const image = document.getElementById('image'); // imagen
 const playAgain = document.getElementById('play-again'); // boton de jugar de nuevo
 const history = document.getElementById('history'); // historial de letras
 
-// Array de 150 palabras que seran frutas, animales, paises, etc.
 const words = [ 'manzana', 'pera', 'naranja', 'limon', 'sandia', 'uva', 'fresa', 'ciruela', 'cereza', 'mango', 'leon', 
                 'tigre', 'caballo', 'cocodrilo', 'camello', 'gato', 'pato', 'oveja', 'gallina', 'vaca', 'cabra', 'argentina',
                 'brasil', 'chile', 'colombia', 'ecuador', 'paraguay', 'peru', 'venezuela', 'alemania', 'francia', 'italia',
@@ -25,9 +24,6 @@ const audioRight = new Audio('./assets/audios/right.mp3');
 
 const wordSelected = words[Math.floor(Math.random() * words.length)]; // Seleccionamos una palabra al azar multiplicando el numero aleatorio por la longitud del array
 const wordArr = wordSelected.split(''); // Separamos la palabra en un array
-
-console.log(wordSelected);
-console.log(wordArr);
 
 // Dibujo un array de guiones bajos
 let guionesArr = [];
