@@ -5,8 +5,13 @@ const image = document.getElementById('image'); // imagen
 const playAgain = document.getElementById('play-again'); // boton de jugar de nuevo
 const history = document.getElementById('history'); // historial de letras
 
-// variables globales
-const words = ['manzana', 'banana', 'pera', 'perro', 'gato', 'rinoceronte', 'bicicleta', 'escopeta', 'canario'];
+// Array de 150 palabras que seran frutas, animales, paises, etc.
+const words = [ 'manzana', 'pera', 'naranja', 'limon', 'sandia', 'uva', 'fresa', 'ciruela', 'cereza', 'mango', 'leon', 
+                'tigre', 'caballo', 'cocodrilo', 'camello', 'gato', 'pato', 'oveja', 'gallina', 'vaca', 'cabra', 'argentina',
+                'brasil', 'chile', 'colombia', 'ecuador', 'paraguay', 'peru', 'venezuela', 'alemania', 'francia', 'italia',
+                'españa', 'portugal', 'rusia', 'japon', 'australia', 'canada', 'mexico', 'argentina', 'brasil', 'chile', 'colombia',
+                'ecuador', 'paraguay', 'peru', 'venezuela', 'alemania', 'francia', 'italia', 'españa', 'portugal', 'rusia', 'japon'];
+
 const alphabet = 'abcdefghijklmnñopqrstuvwxyz'.split('');  // Transformo el alfabeto en un array
 let vidas = 8;
 lives.innerHTML = vidas; // muestro las vidas en el html
@@ -76,7 +81,7 @@ alphabet.forEach((letter) => {
             audioRight.play().catch(e => console.log(e));
 
             setTimeout(() => {
-            alph.removeChild(span).id;
+                alph.removeChild(span).id;
             }
                 , 1000);
         }
@@ -140,7 +145,7 @@ alphabet.forEach((letter) => {
             // reproducir audio
             audioWin.play().catch((e) => console.log(e));
         }
-        
+
         // Historial de letras
         historyArr.unshift(letterClicked);
         console.log(historyArr);
