@@ -7,26 +7,32 @@ const history = document.getElementById('history'); // historial de letras
 
 // variables globales
 const words = ['manzana', 'banana', 'pera', 'perro', 'gato', 'rinoceronte', 'bicicleta', 'escopeta', 'canario'];
-console.log(Math.floor(Math.random() * words.length));
-const alphabet = 'abcdefghijklmnñopqrstuvwxyz'.split('');
+const alphabet = 'abcdefghijklmnñopqrstuvwxyz'.split('');  // Transformo el alfabeto en un array
 let vidas = 8;
-lives.innerHTML = vidas;
-let historyArr = [];
+lives.innerHTML = vidas; // muestro las vidas en el html
+let historyArr = []; // array para guardar las letras que se han usado
+
+// Precargo los archivos de audio
+const audioWin = new Audio('./assets/audios/youwin.mp3');
+const audioLose = new Audio('./assets/audios/gameover.mp3');
+const audioFail = new Audio('./assets/audios/wrong.mp3');
+const audioRight = new Audio('./assets/audios/right.mp3');
 
 const wordSelected = words[Math.floor(Math.random() * words.length)]; // Seleccionamos una palabra al azar multiplicando el numero aleatorio por la longitud del array
+const wordArr = wordSelected.split(''); // Separamos la palabra en un array
+
 console.log(wordSelected);
-
-
-const arrWord = wordSelected.split(''); // Separamos la palabra en un array
-console.log(arrWord);
+console.log(wordArr);
 
 // Dibujo un array de guiones bajos
 let guionesArr = [];
-arrWord.forEach((letter) => {
+wordArr.forEach((letter) => {
     guionesArr.push('_');
 }
 );
 letters.innerHTML = guionesArr.join(' ');
+
+// Imagen por defecto
 image.innerHTML = `<img class="mx-auto md:w-96 md:h-96 w-64 h-64" src="./assets/images/ahorc8v.webp" alt="Imagen Vida 8"></img>`;
 
 // Dibujo el alfabeto en el tablero
@@ -42,10 +48,11 @@ alphabet.forEach((letter) => {
     // Funcion para el evento click
     const logicaFunc = (e) => {
         let letterClicked = e.target.id;
-        let letterIndex = arrWord.indexOf(letterClicked);
+        let letterIndex = wordArr.indexOf(letterClicked);
 
-        for (let i = 0; i < arrWord.length; i++) {
-            if (arrWord[i] === letterClicked) {
+        // Si la letra esta en el array
+        for (let i = 0; i < wordArr.length; i++) {
+            if (wordArr[i] === letterClicked) {
                 guionesArr[i] = letterClicked;
                 letters.innerHTML = guionesArr.join(' ').toUpperCase();
             }
@@ -56,12 +63,18 @@ alphabet.forEach((letter) => {
             vidas--;
             lives.innerHTML = vidas;
             span.classList.add('text-red-600');
+            // reproducir audio de error
+            audioFail.play().catch(e => console.log(e));
+
             setTimeout(() => {
                 alph.removeChild(span).id;
             }
                 , 1000);
-        } else {
+        } else { // Si la letra esta en la palabra
             span.classList.add('text-green-600');
+            // reproducir audio
+            audioRight.play().catch(e => console.log(e));
+
             setTimeout(() => {
             alph.removeChild(span).id;
             }
@@ -116,18 +129,16 @@ alphabet.forEach((letter) => {
             alph.classList.add('text-red-600', 'text-opacity-80');   // Creamos un elemento button
             playAgainButton();
             // reproducir audio
-            const audio = new Audio('./assets/audios/gameover.mp3');
-            audio.play();
+            audioLose.play().catch(e => console.log(e));
         }
         // Si se ganó
-        if (guionesArr.join('') === arrWord.join('')) {
+        if (guionesArr.join('') === wordArr.join('')) {
             alph.innerHTML = '';
             alph.innerHTML = 'Ganaste!!!';
             alph.classList.add('text-green-600', 'text-opacity-80');
             playAgainButton();
             // reproducir audio
-            const audio = new Audio('./assets/audios/youwin.mp3');
-            audio.play();
+            audioWin.play().catch((e) => console.log(e));
         }
         
         // Historial de letras
