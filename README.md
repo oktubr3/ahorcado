@@ -1,7 +1,20 @@
 # Ahorcado - Nivel Dios 🔥
 
 Juego del Ahorcado mejorado con características de nivel profesional // JS Vanilla
-=> https://oktubr3.github.io/ahorcado/
+
+## 🎮 ¡JUEGA AHORA!
+
+### 👉 [CLICK AQUÍ PARA JUGAR ONLINE](https://oktubr3.github.io/ahorcado/) 👈
+
+**O descarga y juega local:**
+```bash
+git clone https://github.com/oktubr3/ahorcado.git
+cd ahorcado
+python3 -m http.server 8000
+# Abre: http://localhost:8000
+```
+
+📖 **[Ver Guía de Inicio Rápido](QUICKSTART.md)** para todas las opciones de ejecución
 
 ## 🎮 Características God-Level
 
