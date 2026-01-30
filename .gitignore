@@ -1,0 +1,31 @@
+# Archivos de respaldo
+*.backup
+*.bak
+*.old
+
+# Dependencias
+node_modules/
+package-lock.json
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos temporales
+*.tmp
+*.temp
+/tmp/
+
+# Archivos de compilación
+dist/
+build/
+
+# Variables de entorno
+.env
+.env.local
