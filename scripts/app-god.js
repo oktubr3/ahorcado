@@ -150,6 +150,12 @@ function selectCategory(category) {
 }
 
 function startGame() {
+    // Mostrar el área del juego
+    const gameArea = document.getElementById('game-area');
+    if (gameArea) {
+        gameArea.style.display = 'block';
+    }
+    
     // Configurar dificultad
     const difficulty = gameData.difficulties[gameState.difficulty];
     gameState.maxVidas = difficulty.lives;
