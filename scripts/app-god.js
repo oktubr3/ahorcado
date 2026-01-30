@@ -82,27 +82,27 @@ function initGame() {
 function showDifficultySelector() {
     const difficultyHTML = `
         <div class="text-center p-6 space-y-6">
-            <h2 class="text-5xl font-bold text-white mb-6">Selecciona Dificultad</h2>
+            <h2 class="text-4xl font-bold text-white mb-8 amatic-font">Selecciona Dificultad</h2>
             <div class="grid grid-cols-2 gap-4">
                 <button onclick="selectDifficulty('facil')" 
-                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl text-3xl transition-all transform hover:scale-105">
-                    🟢 FÁCIL<br><span class="text-lg">10 vidas • 4-6 letras</span>
+                    class="bg-green-500 hover:bg-green-600 text-white font-semibold py-6 px-6 rounded-lg text-2xl transition-all transform hover:scale-105 amatic-font">
+                    FÁCIL<br><span class="text-base font-normal">10 vidas • 4-6 letras</span>
                 </button>
                 <button onclick="selectDifficulty('normal')" 
-                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-xl text-3xl transition-all transform hover:scale-105">
-                    🔵 NORMAL<br><span class="text-lg">8 vidas • 7-10 letras</span>
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-6 px-6 rounded-lg text-2xl transition-all transform hover:scale-105 amatic-font">
+                    NORMAL<br><span class="text-base font-normal">8 vidas • 7-10 letras</span>
                 </button>
                 <button onclick="selectDifficulty('dificil')" 
-                    class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-xl text-3xl transition-all transform hover:scale-105">
-                    🟠 DIFÍCIL<br><span class="text-lg">6 vidas • 11-15 letras</span>
+                    class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-6 px-6 rounded-lg text-2xl transition-all transform hover:scale-105 amatic-font">
+                    DIFÍCIL<br><span class="text-base font-normal">6 vidas • 11-15 letras</span>
                 </button>
                 <button onclick="selectDifficulty('imposible')" 
-                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-xl text-3xl transition-all transform hover:scale-105 animate-pulse">
-                    🔴 IMPOSIBLE<br><span class="text-lg">4 vidas • 16+ letras</span>
+                    class="bg-red-500 hover:bg-red-600 text-white font-semibold py-6 px-6 rounded-lg text-2xl transition-all transform hover:scale-105 amatic-font">
+                    IMPOSIBLE<br><span class="text-base font-normal">4 vidas • 16+ letras</span>
                 </button>
             </div>
-            <div class="mt-6 text-white text-xl">
-                <p>📊 Estadísticas:</p>
+            <div class="mt-8 text-white text-lg space-y-2">
+                <p class="font-semibold">Estadísticas</p>
                 <p>Partidas: ${gameState.gamesPlayed} | Ganadas: ${gameState.gamesWon} | Perdidas: ${gameState.gamesLost}</p>
                 <p>Mejor Puntuación: ${gameState.bestScore} | Racha: ${gameState.streak}</p>
             </div>
@@ -119,20 +119,20 @@ function selectDifficulty(difficulty) {
 function showCategorySelector() {
     const categoriesHTML = `
         <div class="text-center p-6 space-y-6">
-            <h2 class="text-5xl font-bold text-white mb-6">Selecciona Categoría</h2>
+            <h2 class="text-4xl font-bold text-white mb-8 amatic-font">Selecciona Categoría</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 ${Object.keys(gameData.categories).map(catKey => {
                     const cat = gameData.categories[catKey];
                     return `
                         <button onclick="selectCategory('${catKey}')" 
-                            class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-4 px-6 rounded-xl text-2xl transition-all transform hover:scale-105">
-                            ${cat.icon} ${cat.name}
+                            class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-4 px-6 rounded-lg text-xl transition-all transform hover:scale-105">
+                            ${cat.name}
                         </button>
                     `;
                 }).join('')}
                 <button onclick="selectCategory('random')" 
-                    class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-xl text-2xl transition-all transform hover:scale-105 col-span-2 md:col-span-3">
-                    🎲 ALEATORIO
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-6 rounded-lg text-xl transition-all transform hover:scale-105 col-span-2 md:col-span-3">
+                    Aleatorio
                 </button>
             </div>
         </div>
@@ -221,14 +221,14 @@ function updateGameInfo() {
     const difficultyInfo = gameData.difficulties[gameState.difficulty];
     
     history.innerHTML = `
-        <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-xl md:text-3xl">
-            <span class="text-white bg-purple-600 px-4 py-2 rounded-lg">${categoryInfo.icon} ${categoryInfo.name}</span>
-            <span class="text-white bg-${difficultyInfo.color}-600 px-4 py-2 rounded-lg">⭐ ${difficultyInfo.name}</span>
-            <span class="text-white bg-yellow-600 px-4 py-2 rounded-lg">🎯 ${gameState.score} pts</span>
-            <span class="text-white bg-blue-600 px-4 py-2 rounded-lg">⏱️ ${Math.floor(gameState.timeRemaining)}s</span>
-            <span class="text-white bg-green-600 px-4 py-2 rounded-lg">💡 ${gameState.hints} pistas</span>
-            <button onclick="useHint()" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-all">
-                💡 PISTA
+        <div class="flex flex-col md:flex-row justify-center items-center gap-3 text-base md:text-lg">
+            <span class="text-white bg-purple-600 px-3 py-1 rounded font-medium">${categoryInfo.name}</span>
+            <span class="text-white bg-${difficultyInfo.color}-600 px-3 py-1 rounded font-medium">${difficultyInfo.name}</span>
+            <span class="text-white bg-yellow-600 px-3 py-1 rounded font-medium">${gameState.score} puntos</span>
+            <span class="text-white bg-blue-600 px-3 py-1 rounded font-medium">${Math.floor(gameState.timeRemaining)}s</span>
+            <span class="text-white bg-green-600 px-3 py-1 rounded font-medium">${gameState.hints} pistas</span>
+            <button onclick="useHint()" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-1 rounded font-medium transition-all">
+                Usar Pista
             </button>
         </div>
     `;
@@ -381,18 +381,18 @@ function endGame(won, message) {
     
     // Mostrar mensaje
     alph.innerHTML = `
-        <div class="text-center p-6 space-y-4">
-            <h2 class="text-6xl font-bold ${won ? 'text-green-400' : 'text-red-400'}">${message}</h2>
-            <p class="text-4xl text-white">Puntuación: ${gameState.score}</p>
-            <p class="text-3xl text-white">Racha: ${gameState.streak} 🔥</p>
-            <div class="space-y-2 mt-4">
+        <div class="text-center p-6 space-y-6">
+            <h2 class="text-5xl font-bold ${won ? 'text-green-400' : 'text-red-400'} amatic-font">${message}</h2>
+            <p class="text-3xl text-white">Puntuación: ${gameState.score}</p>
+            <p class="text-2xl text-white">Racha: ${gameState.streak}</p>
+            <div class="space-y-3 mt-6">
                 <button onclick="location.reload()" 
-                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl text-3xl transition-all transform hover:scale-105 w-full">
-                    🎮 JUGAR DE NUEVO
+                    class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg text-2xl transition-all transform hover:scale-105 w-full amatic-font">
+                    Jugar de Nuevo
                 </button>
                 <button onclick="showStats()" 
-                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl text-3xl transition-all transform hover:scale-105 w-full">
-                    📊 VER ESTADÍSTICAS
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg text-2xl transition-all transform hover:scale-105 w-full amatic-font">
+                    Ver Estadísticas
                 </button>
             </div>
         </div>
@@ -407,37 +407,37 @@ function showStats() {
         : 0;
     
     alph.innerHTML = `
-        <div class="text-center p-6 space-y-4">
-            <h2 class="text-6xl font-bold text-white mb-6">📊 ESTADÍSTICAS</h2>
-            <div class="grid grid-cols-2 gap-4 text-2xl text-white">
+        <div class="text-center p-6 space-y-6">
+            <h2 class="text-4xl font-bold text-white mb-6 amatic-font">Estadísticas</h2>
+            <div class="grid grid-cols-2 gap-4 text-lg text-white">
                 <div class="bg-blue-600 p-4 rounded-lg">
-                    <p class="text-4xl font-bold">${gameState.gamesPlayed}</p>
-                    <p>Partidas Jugadas</p>
+                    <p class="text-3xl font-bold">${gameState.gamesPlayed}</p>
+                    <p class="text-sm">Partidas Jugadas</p>
                 </div>
                 <div class="bg-green-600 p-4 rounded-lg">
-                    <p class="text-4xl font-bold">${gameState.gamesWon}</p>
-                    <p>Victorias</p>
+                    <p class="text-3xl font-bold">${gameState.gamesWon}</p>
+                    <p class="text-sm">Victorias</p>
                 </div>
                 <div class="bg-red-600 p-4 rounded-lg">
-                    <p class="text-4xl font-bold">${gameState.gamesLost}</p>
-                    <p>Derrotas</p>
+                    <p class="text-3xl font-bold">${gameState.gamesLost}</p>
+                    <p class="text-sm">Derrotas</p>
                 </div>
                 <div class="bg-purple-600 p-4 rounded-lg">
-                    <p class="text-4xl font-bold">${winRate}%</p>
-                    <p>% Victoria</p>
+                    <p class="text-3xl font-bold">${winRate}%</p>
+                    <p class="text-sm">Porcentaje Victoria</p>
                 </div>
                 <div class="bg-yellow-600 p-4 rounded-lg">
-                    <p class="text-4xl font-bold">${gameState.bestScore}</p>
-                    <p>Mejor Puntuación</p>
+                    <p class="text-3xl font-bold">${gameState.bestScore}</p>
+                    <p class="text-sm">Mejor Puntuación</p>
                 </div>
                 <div class="bg-orange-600 p-4 rounded-lg">
-                    <p class="text-4xl font-bold">${gameState.streak}</p>
-                    <p>Racha Actual</p>
+                    <p class="text-3xl font-bold">${gameState.streak}</p>
+                    <p class="text-sm">Racha Actual</p>
                 </div>
             </div>
             <button onclick="location.reload()" 
-                class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-xl text-3xl transition-all transform hover:scale-105 mt-6">
-                🎮 VOLVER A JUGAR
+                class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg text-2xl transition-all transform hover:scale-105 mt-6 amatic-font">
+                Volver a Jugar
             </button>
         </div>
     `;
