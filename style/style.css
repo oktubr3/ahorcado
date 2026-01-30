@@ -1,3 +1,59 @@
 .amatic-font {
    font-family: 'Amatic SC', cursive
 }
+
+/* Animaciones God-level */
+@keyframes shake {
+   0%, 100% { transform: translateX(0); }
+   10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+   20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.animate-shake {
+   animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse-slow {
+   0%, 100% { transform: scale(1); }
+   50% { transform: scale(1.05); }
+}
+
+.animate-pulse {
+   animation: pulse-slow 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+   from { opacity: 0; transform: translateY(20px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+   animation: fadeIn 0.5s ease-out;
+}
+
+/* Efectos hover mejorados */
+button:hover {
+   filter: brightness(1.1);
+}
+
+button:active {
+   transform: scale(0.95);
+}
+
+/* Gradientes premium */
+.gradient-text {
+   background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+/* Sombras modernas */
+.modern-shadow {
+   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Transiciones suaves */
+* {
+   transition: all 0.3s ease;
+}
